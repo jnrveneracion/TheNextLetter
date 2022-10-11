@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - V2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Silkscreen&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="GuessLetter.css">
+</head>
+<body>
+    <!--  -->
+    <div id="mainArea" class="mainArea">
+        <span class="topTitle">What's the next</span>
+        <div class="gameTitle">
+            <div class="gTitle">CH<span class="que">?</span>RACTER</div>
+            <span class="subTitle">GAME!</span>
+        </div>  
+        <div class="buttonsIn">      
+            <button class="buttonHome" onclick="goPlay()"> Play </button>
+            <button class="buttonHome"> Settings </button> 
+        </div>
+    </div>
+    <!--  -->
+
+    <div class="selectMode" id="selectMode" style="display: none;">
+        <h5 class="topTitle" style="float: none !important; font-size: 15px !important;">choose difficulty</h5>
+        <button class="buttonHome" onclick="play( timerMode = '60s')" title="1 Minute"> Easy </button>
+        <button class="buttonHome" onclick="play( timerMode = '30s')" title="30 Seconds"> Medium </button> 
+        <button class="buttonHome" onclick="play( timerMode = '10s')" title="10 seconds"> Hard </button>
+        <!-- <button class="buttonHome" onclick="" title="set timer"> custom </button>  -->
+    </div>
+
+    <!--  -->
+    <div id="mainGame" class="mainGame" style="display: none; z-index: 3;">
+        <div class="box">
+            <div class="insidetxt" id="txtbox">
+                <h1>After <span id="txt1" style="text-decoration: underline;"></span>, what letter comes next?</h1>
+            </div>
+
+            <div id='progressbar4'></div>
+            <p style="font-size: 10px;">answer as many as you can.</p>
+            <div class="choices" id="choices" style="display: none;">
+                <div class="divChoice" id="choice1" onclick="chosen(ans = 'a')"></div>
+                <div class="divChoice" id="choice2" onclick="chosen(ans = 'b')"></div>
+                <div class="divChoice" id="choice3" onclick="chosen(ans = 'c')"></div>
+                <div class="divChoice" id="choice4" onclick="chosen(ans = 'd')"></div>
+            </div>
+
+            <div class="typing" id="typing" style="display: none;">
+                <input id='answerTxt' type='text' style='border-radius: 5px; height: 20px; font-size: 12px; margin: 20px; text-align: center;'>
+                <p style="font-size: 10px;">press <span style="color: red; font-weight: bold;">enter</span> to submit your answer.</p>
+            </div>
+        </div>
+
+        <span id="wrong" style="display: none; color: rgb(255, 255, 255);">
+            <span style="color: red; font-weight: bold;">Wrong!</span> the letter next to 
+            <span id="nextTo" class="correction"></span> 
+            is 
+            <span id="nextIs" class="correction"></span>.
+        </span>
+    </div>
+    <!--  -->
+
+    <!--  -->
+    <div class= "finishBox" id="finishBox" style="display: none; text-align: center;">
+        <span id="finish"> time is up! </span>
+        <h1 style="font-size: 60px;" id="finishScore">0</h1>
+        <h1 class="finishScore">Total Score <span id="finishScore"></span></h1>
+        <button id="jumping" class="buttonFilled" onclick="playAgain()">Play Again</button>
+        <button class="buttonOutlined" onclick="goHome()">Home</button>
+    </div>
+    
+    <span id="value"></span>
+    <!--  -->
+
+    <div class="selectMethod" id="selectMethod" style="display: none; text-align: center;">
+        <h5 class="topTitle" style="float: none !important; font-size: 15px !important;">select a response strategy</h5>
+        <button class="buttonHome" onclick="playTyping()" title="Play with typing">Typing</button>
+        <button class="buttonHome" onclick="playChoices()" title="Play with choices">Selecting</button> 
+    </div>
+
+
+    <script src="GuessLetter.js"></script>
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>    
+</body>
+</html>
