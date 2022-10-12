@@ -239,7 +239,7 @@ function playAgain(){
 }
 
 function goHome(){
-window.location = 'GuessLetter.html';
+window.location = 'index.html';
 }
 
 function selectMode(){
